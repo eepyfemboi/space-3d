@@ -46,7 +46,7 @@ window.onload = function() {
         zip.file('cubemap.png', cubemapData, { base64: true });    
       }
       zip.generateAsync({ type: "blob" }).then(blob => {
-        saveAs(blob, "skybox.zip");
+        saveAs(blob, `skybox_${this.seed}_${this.resolution.toString()}.zip`);
       });
     };
     this._saveCubemap = function() {
